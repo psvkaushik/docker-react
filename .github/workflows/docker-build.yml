@@ -27,3 +27,11 @@ jobs:
       - name: Push Docker image to Docker Hub
         run: docker push satoru429/reactapp:latest
         # Replace 'my-docker-image' with your desired image name
+        
+
+      - name: Azure Web app Development
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'reactappsvk'
+          publish_profile: ${{ secrets.REACT_PP }}
+          images: 'satoru429/reactapp:latest'
