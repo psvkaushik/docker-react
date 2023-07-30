@@ -10,9 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
+      
+      - uses: actions/@checkout@v3
       - name: Build Docker image
-        run: docker build -t frontend .
+        working-directory: frontend
+        run: docker build -f Dockerfile -t reactapp .
         # Replace 'my-docker-image' with your desired image name
 
       - name: Log in to Docker Hub
@@ -23,5 +25,5 @@ jobs:
         # Replace 'DOCKER_USERNAME' and 'DOCKER_PASSWORD' with your Docker Hub credentials set as secrets
 
       - name: Push Docker image to Docker Hub
-        run: docker push frontend
+        run: docker push reacrapp
         # Replace 'my-docker-image' with your desired image name
