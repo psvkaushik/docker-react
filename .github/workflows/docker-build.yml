@@ -33,5 +33,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'reactappsvk'
-          publish_profile: ${{ secrets.REACT_PP }}
+          publish-profile: ${{ secrets.REACT_PP }}
           images: 'satoru429/reactapp:latest'
