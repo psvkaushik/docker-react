@@ -13,7 +13,7 @@ jobs:
       
       - uses: actions/checkout@v3
       - name: Build Docker image
-        working-directory: frontend
+        working-directory: docker-react
         run: docker build -f Dockerfile -t reactapp .
         # Replace 'my-docker-image' with your desired image name
 
@@ -25,5 +25,5 @@ jobs:
         # Replace 'DOCKER_USERNAME' and 'DOCKER_PASSWORD' with your Docker Hub credentials set as secrets
 
       - name: Push Docker image to Docker Hub
-        run: docker push reacrapp
+        run: docker push reactapp
         # Replace 'my-docker-image' with your desired image name
